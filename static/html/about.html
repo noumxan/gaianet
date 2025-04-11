@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>About GaiaScan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="navbar">
+    <div class="logo">🛡️ GaiaScan</div>
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/app">App</a>
+        <a href="/about">About</a>
+    </div>
+</div>
+<div class='container'>
+    <h1>About GaiaScan</h1>
+    
+    <section class="about-section">
+        <h2>What is GaiaScan?</h2>
+        <p>
+            Our tool helps detect harmful content, including racism, and provides an easy way to report cybercrime. 
+            It also distinguishes between AI-generated and real images, ensuring users can navigate online material safely.
+        </p>
+    </section>
+    
+    <section class="about-section">
+        <h2>Problem, Action and Solution</h2>
+        <p>
+            Many people, particularly from marginalised groups, find it difficult to identify harmful or racist content online. 
+            Our tool detects harmful material, explains it in five languages, identifies whether images are real or AI-generated, 
+            and helps users report cybercrime, offering support to process distressing content calmly.
+        </p>
+    </section>
+    
+    <section class="about-section team-section">
+        <h2>Meet The Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="{{ url_for('static', filename='img/avatar-1.png') }}" alt="Nouman Syed" class="team-avatar">
+                <h3>Nouman Syed</h3>
+                <p>Made the backend</p>
+            </div>
+            
+            <div class="team-member">
+                <img src="{{ url_for('static', filename='img/avatar-2.png') }}" alt="Glory Iloba" class="team-avatar">
+                <h3>Glory Iloba</h3>
+                <p>Front End and Design</p>
+            </div>
+            
+            <div class="team-member">
+                <img src="{{ url_for('static', filename='img/avatar-3.png') }}" alt="Ogochukwu Juwah" class="team-avatar">
+                <h3>Ogochukwu Juwah</h3>
+                <p>Research on Sustainability and Design</p>
+            </div>
+            
+            <div class="team-member">
+                <img src="{{ url_for('static', filename='img/avatar-4.png') }}" alt="Palvir Gill" class="team-avatar">
+                <h3>Palvir Gill</h3>
+                <p>Devops and Pitching</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="about-section">
+        <h2>Our Mission</h2>
+        <p>
+            At GaiaScan, we are committed to creating a safer online environment for everyone. We believe in leveraging 
+            technology to empower users to navigate digital spaces with confidence and awareness. Our mission is to make 
+            harmful content detection accessible, educational, and actionable.
+        </p>
+    </section>
+    
+    <section class="about-section">
+        <h2>Contact Us</h2>
+        <p>
+            Have questions or suggestions? We'd love to hear from you! 
+            <br>
+            Email us at: <a href="mailto:contact@gaiascan.org">contact@gaiascan.org</a>
+        </p>
+    </section>
+    
+    <div class="back-to-app">
+        <a href="/app">
+            <button type="button">Try GaiaScan Now</button>
+        </a>
+    </div>
+</div>
+</body>
+</html> 

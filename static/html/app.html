@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>GaiaScan – Online Safety Companion</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="navbar">
+    <div class="logo">🛡️ GaiaScan</div>
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/app">App</a>
+        <a href="/about">About</a>
+    </div>
+</div>
+<div class='container'>
+    <h1>🛡️ GaiaScan – Your Online Safety Companion</h1>
+    <form method='post' enctype='multipart/form-data'>
+        <label>🖼️ Upload a meme or screenshot:</label>
+        <input type='file' name='image' required>
+
+        <label>🎙️ Upload a voice message (MP3/WAV):</label>
+        <input type='file' name='audio'>
+
+        <label>🌍 Select your native language:</label>
+        <select name='language' required>
+            <option value='en'>English</option>
+            <option value='ur'>Urdu</option>
+            <option value='hi'>Hindi</option>
+            <option value='ar'>Arabic</option>
+            <option value='pl'>Polish</option>
+        </select>
+
+        <button type='submit'>🔎 Analyse Now</button>
+    </form>
+
+    {% if result %}
+    <div class='result'>
+        <h3>🧠 AI Analysis (English):</h3>
+        <p>{{ result['english'] }}</p>
+
+        <h3>🌍 Translated ({{ lang_name }}):</h3>
+        <p>{{ result['translated'] }}</p>
+
+        <h3>🔍 Image Evaluation:</h3>
+        <p>{{ result['image_check'] }}</p>
+
+        <audio controls>
+            <source src='/play' type='audio/mpeg'>
+            Your browser does not support the audio element.
+        </audio>
+
+        <h3>📬 Report This</h3>
+        <p>If you'd like to report this incident, click the button below to open a Gmail email draft.</p>
+        <a href='https://mail.google.com/mail/?view=cm&fs=1&to=contact@theredcard.org&su=Online%20Hate%20Report&body=Please%20investigate%20this%20content:%20{{ result['english'] | urlencode }}' target='_blank'>
+            <button type='button'>📤 Report via Gmail</button>
+        </a>
+        <p>Or report anonymously at: <a href='https://www.report-it.org.uk/' target='_blank'>report-it.org.uk</a></p>
+    </div>
+    {% endif %}
+</div>
+</body>
+</html>
